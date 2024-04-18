@@ -295,7 +295,7 @@ double BMP280_Get_Temperature(void)
 	Msb	 = BMP280_ReadReg(BMP280_TEMPERATURE_MSB_REG);
 	Bit32 = ((long)(Msb << 12))|((long)(Lsb << 4))|(XLsb>>4);	//寄存器的值,组成一个浮点数
 	temperature = bmp280_compensate_T_double(Bit32);
-	return temperature;
+	return temperature; // 返回值
 }
 
 //函数：获取温度，大气压数据
